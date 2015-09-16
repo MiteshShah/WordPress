@@ -1,0 +1,9 @@
+Host webserver01
+	User root
+	Port 22
+	HostName 1.1.1.1
+
+Host webserver01
+	User root
+	Port 22
+	HostName 2.2.2.2

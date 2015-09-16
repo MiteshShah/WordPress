@@ -1,0 +1,20 @@
+---
+# tasks file for common
+- name: Update apt cache
+  apt: update_cache=yes cache_valid_time=3600
+
+- name: Upgrade apt packages
+  apt: upgrade=dist update_cache=yes
+
+- name: Installing required software
+  apt: name={{ item }} state=present
+  with_items:
+    - bc
+    - tar
+    - sudo
+    - wget
+    - curl
+    - git-core
+    - coreutils
+    - python-software-properties
+    - software-properties-common

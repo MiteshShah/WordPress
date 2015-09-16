@@ -1,0 +1,10 @@
+- name: Install Nginx, PHP5-FPM, MariaDB and WordPress
+  hosts: WordPress
+  remote_user: root
+
+  roles:
+    - common
+    - nginx
+#    - php5-fpm
+#    - mariadb
+#    - wordpress
