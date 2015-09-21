@@ -1,0 +1,7 @@
+# Linux Distro
+
+linux_distro: ubuntu
+linux_distro_version: 14.04
+
+# NGINX Variables
+website_name: server.example.com

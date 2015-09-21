@@ -1,5 +1,11 @@
 ---
 # tasks file for common
+- name: Copy the NGINX repository definition
+  template: src=nginx.list dest=/etc/apt/sources.list.d/
+
+- name: Add an Apt signing key
+  apt_key: url=http://download.opensuse.org/repositories/home:rtCamp:EasyEngine/xUbuntu_{{ linux_distro_version }}/Release.key
+
 - name: Update apt cache
   apt: update_cache=yes cache_valid_time=3600
 
