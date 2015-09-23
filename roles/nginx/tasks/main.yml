@@ -2,6 +2,12 @@
 - name: Install NGINX
   apt: name=nginx state=present
 
-- name: Setup NGINX configuration
+- name: Copy NGINX conf.d config files
+  copy: src=conf.d dest=/etc/nginx/
+
+- name: Copy NGINX common config files
+  copy: src=common conf.d dest=/etc/nginx/
+
+- name: Setup NGINX website configuration
   template: src=wordpress.conf dest=/etc/nginx/sites-available/{{ website_name }}.conf
   notify: restart nginx
